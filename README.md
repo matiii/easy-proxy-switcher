@@ -1,2 +1,2 @@
-# easy-proxy-switcher
+# Easy proxy switcher
 Console application to switch proxy on Windows
