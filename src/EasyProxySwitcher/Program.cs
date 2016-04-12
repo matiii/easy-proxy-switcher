@@ -1,17 +1,20 @@
 ﻿using System;
+using System.Linq;
 
 namespace EasyProxySwitcher
 {
     class Program
     {
-        private static string proxy= "proxy.host:port";
-        private static string over = "don't use this sites;<local>";
+        private static string proxy= "proxy.hyper:3128";
 
         static void Main(string[] args)
         {
+            var conf = new OverConfiguration();
+            string over = conf.Overs();
             Console.WriteLine("Start switching");
             Console.WriteLine("Proxy: " + proxy);
-            Console.WriteLine("Wyjątki " + over);
+            Console.WriteLine("Exceptions: ");
+            conf.OversArray.ToList().ForEach(Console.WriteLine);
 
             try
             {
